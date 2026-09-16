@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio de Daniel Bafulwa — développeur Django full-stack. Projets, compétences et contact.">
+<title>Daniel Bafulwa — Développeur Django</title>
+<script>
+  window.tailwind = { config: { theme: { extend: {
+    colors: {
+      navy:'#07303f', deep:'#0b2430', aqua:'#0fb5b0', teal:'#0b7285',
+      sunset:'#f47533', ember:'#e8622a', sand:'#f6f2ea', paper:'#f6f2ea', ink:'#123140'
+    },
+    fontFamily: { display:['Sora','Plus Jakarta Sans','sans-serif'], sans:['Plus Jakarta Sans','system-ui','sans-serif'], mono:['JetBrains Mono','ui-monospace','monospace'] },
+    boxShadow: { soft:'0 6px 30px -12px rgba(7,48,63,.18)', lift:'0 18px 50px -20px rgba(7,48,63,.35)' }
+  }}}};
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2307303f'/%3E%3Ctext x='32' y='42' font-size='28' text-anchor='middle' fill='%23f47533' font-family='Arial' font-weight='bold'%3EDK%3C/text%3E%3C/svg%3E">
+<style>
+  body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#f6f2ea;color:#123140;}
+  ::selection{background:#f47533;color:#fff;}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:#f47533;}
+  .glass{background:rgba(255,255,255,.8);backdrop-filter:blur(16px);}
+  .card{background:#fff;border-radius:1.25rem;border:1px solid rgba(7,48,63,.06);box-shadow:0 6px 30px -12px rgba(7,48,63,.12);}
+  .title-grad{background:linear-gradient(100deg,#07303f 20%,#0b7285 55%,#0fb5b0 90%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1);}
+  .reveal.is-visible{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;}}
+  a.tag, .tag{display:inline-block;background:#eef4f6;color:#0b7285;border-radius:9999px;padding:.35rem .8rem;font-size:.8rem;font-weight:600;}
+  .grid-skills{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}
+</style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<!-- Barre sticky -->
+<header class="sticky top-0 z-40 glass border-b border-navy/5 shadow-soft">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#" class="font-display font-extrabold text-xl text-navy">Daniel<span class="text-sunset">.</span>Bafulwa</a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-ink/70">
+      <a class="hover:text-teal transition" href="#apropos">À propos</a>
+      <a class="hover:text-teal transition" href="#competences">Compétences</a>
+      <a class="hover:text-teal transition" href="#projets">Projets</a>
+      <a class="hover:text-teal transition" href="#contact">Contact</a>
+      <a href="mailto:davidbafulwa@gmail.com" class="px-4 py-2 rounded-full bg-sunset text-white font-bold hover:brightness-110 transition">Engagez-moi</a>
+    </nav>
+    <button class="md:hidden p-2 rounded-lg text-navy" id="burger" aria-label="Menu">☰</button>
+  </div>
+  <div class="md:hidden hidden border-t border-navy/5 px-5 py-3 flex flex-col gap-2 text-sm font-semibold" id="mobile-menu">
+    <a class="hover:text-teal" href="#apropos">À propos</a>
+    <a class="hover:text-teal" href="#competences">Compétences</a>
+    <a class="hover:text-teal" href="#projets">Projets</a>
+    <a class="hover:text-teal" href="#contact">Contact</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-[1.2fr_.8fr] gap-12 items-center">
+    <div class="reveal is-visible">
+      <span class="kicker">👋 Bonjour, je suis</span>
+      <h1 class="font-display text-4xl md:text-6xl font-extrabold leading-[1.1] mt-3">
+        <span class="block">Daniel</span>
+        <span class="title-grad block">Bafulwa</span>
+      </h1>
+      <p class="text-lg md:text-xl text-ink/70 mt-5 max-w-lg">
+        Développeur <strong>Django (Python)</strong>, j'imagine et je construis des applications web qui résolvent de vrais problèmes — comme <strong>SILIMU</strong>, la réservation de billets de bateau sur le lac Kivu.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="#projets" class="px-6 py-3 rounded-full bg-navy text-white font-bold hover:bg-deep transition">Voir mes projets</a>
+        <a href="#contact" class="px-6 py-3 rounded-full border-2 border-navy text-navy font-bold hover:bg-navy hover:text-white transition">Me contacter</a>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-8">
+        <span class="tag">Django</span><span class="tag">Python</span><span class="tag">PostgreSQL</span>
+        <span class="tag">Supabase</span><span class="tag">Tailwind CSS</span><span class="tag">API REST</span>
+      </div>
+    </div>
+    <div class="hidden md:block">
+      <div class="card p-6 text-center">
+        <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-gradient-to-br from-teal to-aqua flex items-center justify-center font-display text-3xl font-extrabold text-white">DK</div>
+        <div class="font-display font-bold text-navy text-lg">Daniel Bafulwa</div>
+        <div class="text-sm text-ink/55">Développeur Django · RDC 🇨🇩</div>
+        <div class="grid grid-cols-3 gap-3 mt-5 text-center font-mono text-xs">
+          <div class="rounded-xl bg-sand px-2 py-3"><div class="font-display text-xl font-extrabold text-navy">1</div>app en prod</div>
+          <div class="rounded-xl bg-sand px-2 py-3"><div class="font-display text-xl font-extrabold text-navy">28</div>tests OK</div>
+          <div class="rounded-xl bg-sand px-2 py-3"><div class="font-display text-xl font-extrabold text-navy">2<sup>e</sup></div>année dev</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À propos -->
+<section id="apropos" class="py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="reveal">
+      <span class="kicker">En savoir plus</span>
+      <h2 class="font-display text-3xl font-bold text-navy mt-2 mb-8">À propos de moi</h2>
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <p class="text-ink/70 leading-relaxed text-lg">
+          Étudiant en <strong>2ᵉ année</strong>, passionné par le développement web, je transforme des idées concrètes en applications fonctionnelles. J'allie un backend solide (Django, PostgreSQL, Supabase) à un frontend soigné et moderne (Tailwind CSS).
+          Mon projet phare, <strong>SILIMU</strong>, gère des réservations de transport lacustre au Kivu&nbsp;: recherche de traversées, paiement Mobile&nbsp;Money (CinetPay), e-billets avec QR&nbsp;code, comptes passagers, back-office et statistiques.
+        </p>
+        <ul class="space-y-3 text-ink/70">
+          <li class="flex items-start gap-3"><span class="text-teal font-bold">✓</span> Applications métier complètes : frontend + backend + base de données</li>
+          <li class="flex items-start gap-3"><span class="text-teal font-bold">✓</span> Intégration de paiement réel (CinetPay, Mobile Money)</li>
+          <li class="flex items-start gap-3"><span class="text-teal font-bold">✓</span> Authentification, rôles et permissions (guichet / administrateur)</li>
+          <li class="flex items-start gap-3"><span class="text-teal font-bold">✓</span> Design responsive : mobile et ordinateur</li>
+          <li class="flex items-start gap-3"><span class="text-teal font-bold">✓</span> Tests automatisés et code de qualité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compétences -->
+<section id="competences" class="py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="reveal">
+      <span class="kicker">Mon arsenal</span>
+      <h2 class="font-display text-3xl font-bold text-navy mt-2 mb-8">Compétences techniques</h2>
+      <div class="grid grid-skills gap-4">
+        <div class="card p-5 hover:-translate-y-1 transition">🐍<h3 class="font-bold text-navy mt-2">Python</h3><p class="text-xs text-ink/55 mt-1">Logique métier, scripts, API</p></div>
+        <div class="card p-5 hover:-translate-y-1 transition">🎯<h3 class="font-bold text-navy mt-2">Django</h3><p class="text-xs text-ink/55 mt-1">ORM, views, formulaires, admin</p></div>
+        <div class="card p-5 hover:-translate-y-1 transition">🗄️<h3 class="font-bold text-navy mt-2">PostgreSQL / Supabase</h3><p class="text-xs text-ink/55 mt-1">Modélisation, Auth, Storage</p></div>
+        <div class="card p-5 hover:-translate-y-1 transition">🎨<h3 class="font-bold text-navy mt-2">Tailwind CSS</h3><p class="text-xs text-ink/55 mt-1">Design responsive moderne</p></div>
+        <div class="card p-5 hover:-translate-y-1 transition">🔌<h3 class="font-bold text-navy mt-2">API REST</h3><p class="text-xs text-ink/55 mt-1">Django REST Framework</p></div>
+        <div class="card p-5 hover:-translate-y-1 transition">💳<h3 class="font-bold text-navy mt-2">Paiement en ligne</h3><p class="text-xs text-ink/55 mt-1">CinetPay, Mobile Money</p></div>
+        <div class="card p-5 hover:-translate-y-1 transition">🔧<h3 class="font-bold text-navy mt-2">Git &amp; GitHub</h3><p class="text-xs text-ink/55 mt-1">Versioning, workflows, CI</p></div>
+        <div class="card p-5 hover:-translate-y-1 transition">📱<h3 class="font-bold text-navy mt-2">Responsive</h3><p class="text-xs text-ink/55 mt-1">Un seul site, tous écrans</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projets -->
+<section id="projets" class="py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="reveal">
+      <span class="kicker">Réalisations</span>
+      <h2 class="font-display text-3xl font-bold text-navy mt-2 mb-8">Mes projets</h2>
+      <div class="card overflow-hidden hover:shadow-lift transition-shadow">
+        <div class="bg-gradient-to-r from-navy to-deep p-6 md:p-8 text-white">
+          <span class="kicker text-aqua">Projet phare</span>
+          <h3 class="font-display text-2xl md:text-3xl font-extrabold mt-2">SILIMU — Transport lacustre au Kivu</h3>
+          <p class="text-white/75 mt-2 max-w-2xl">Réservation de billets de bateau en ligne entre Bukavu, Goma, Idjwi, Minova, Uvira et Kalemie&nbsp;: recherche, paiement Mobile Money, e-billet QR, comptes passagers, back-office.</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tag">Django 5</span><span class="tag">PostgreSQL / Supabase</span><span class="tag">Tailwind CSS</span><span class="tag">CinetPay</span><span class="tag">QR code</span><span class="tag">Chart.js</span>
+          </div>
+        </div>
+        <div class="p-6 md:p-8 grid md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 space-y-2 text-sm text-ink/70">
+            <p class="flex items-start gap-2"><span class="text-teal font-bold">✓</span> Paiement réel Orange Money / Airtel / M-Pesa / carte</p>
+            <p class="flex items-start gap-2"><span class="text-teal font-bold">✓</span> E-billet QR scannable, envoyé par e-mail (Brevo)</p>
+            <p class="flex items-start gap-2"><span class="text-teal font-bold">✓</span> Comptes passagers + historique + rappels automatiques</p>
+            <p class="flex items-start gap-2"><span class="text-teal font-bold">✓</span> Back-office : guichet &amp; admin, statistiques, exports CSV/Excel/PDF</p>
+            <p class="flex items-start gap-2"><span class="text-teal font-bold">✓</span> 28 tests automatisés, API REST</p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a href="https://github.com/davidbafulwa/silimu_django" class="px-5 py-3 rounded-full bg-navy text-white text-center font-bold hover:bg-deep transition">Voir le code sur GitHub</a>
+            <a href="https://github.com/davidbafulwa/silimu_django/blob/main/README.md" class="px-5 py-3 rounded-full border-2 border-navy text-navy text-center font-bold hover:bg-navy hover:text-white transition">Consulter le README</a>
+          </div>
+        </div>
+      </div>
+      <p class="text-ink/45 text-sm mt-6">➕ D'autres projets arrivent — ce portfolio est en cours d'enrichissement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-16 md:py-20">
+  <div class="max-w-3xl mx-auto px-5">
+    <div class="reveal card p-8 md:p-12 text-center">
+      <span class="kicker">Travaillons ensemble</span>
+      <h2 class="font-display text-3xl font-bold text-navy mt-2">Discutons de votre projet</h2>
+      <p class="text-ink/60 mt-3">Une idée d'application web ? Un besoin de développement Django ? Écrivez-moi, je réponds vite.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-8">
+        <a href="mailto:davidbafulwa@gmail.com" class="px-6 py-3 rounded-full bg-sunset text-white font-bold hover:brightness-110 transition">✉️ davidbafulwa@gmail.com</a>
+        <a href="https://github.com/danielbafulwa" class="px-6 py-3 rounded-full border-2 border-navy text-navy font-bold hover:bg-navy hover:text-white transition">GitHub @danielbafulwa</a>
+      </div>
+      <div class="flex justify-center gap-4 mt-6 text-xs text-ink/45 font-mono">
+        <span>📍 Bukavu &amp; Goma — RDC</span><span>•</span><span>🇨🇩</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="mt-auto bg-deep text-white/60">
+  <div class="max-w-6xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+    <span>© 2026 <strong class="text-white">Daniel Bafulwa</strong> — Développeur Django. Tous droits réservés.</span>
+    <span class="font-mono">const dev = "passion" + "rigueur"</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var burger=document.getElementById('burger'), menu=document.getElementById('mobile-menu');
+    if(burger&&menu){burger.addEventListener('click',function(){menu.classList.toggle('hidden');});}
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}});},{threshold:.12});
+      document.querySelectorAll('.reveal:not(.is-visible)').forEach(function(el){io.observe(el);});
+    }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('is-visible');});}
+  })();
+</script>
+</body>
+</html>

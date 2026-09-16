@@ -1,0 +1,6 @@
+[build]
+  publish = "."
+  command = "ls -la index.html"
+
+[build.environment]
+  NODE_VERSION = "20"
