@@ -220,6 +220,7 @@ footer .mono{font-size:.75rem;}
       <a href="#apropos">À propos</a>
       <a href="#competences">Compétences</a>
       <a href="#projets">Projets</a>
+      <a href="#nouveautes">Nouveautés</a>
       <a href="#contact">Contact</a>
       <a href="#contact" class="btn-cta">Me contacter</a>
     </nav>
@@ -229,6 +230,7 @@ footer .mono{font-size:.75rem;}
     <a href="#apropos">À propos</a>
     <a href="#competences">Compétences</a>
     <a href="#projets">Projets</a>
+    <a href="#nouveautes">Nouveautés</a>
     <a href="#contact">Contact</a>
   </div>
 </header>
@@ -268,9 +270,9 @@ footer .mono{font-size:.75rem;}
   <div class="wrap">
     <div class="stats">
       <div class="stat"><div class="n">1</div><div class="l">application<br>en production</div></div>
-      <div class="stat"><div class="n">28</div><div class="l">tests<br>automatisés</div></div>
-      <div class="stat"><div class="n">200+</div><div class="l">traversées<br>programmées</div></div>
+      <div class="stat"><div class="n">238</div><div class="l">tests<br>automatisés</div></div>
       <div class="stat"><div class="n">10</div><div class="l">lignes lacustres<br>couvertes</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">ports<br>desservis</div></div>
     </div>
   </div>
 </section>
@@ -384,7 +386,7 @@ footer .mono{font-size:.75rem;}
           e-billet à QR code, comptes passagers et back-office.
         </p>
         <div class="tags">
-          <span class="tag">Django 5</span><span class="tag">PostgreSQL / Supabase</span>
+          <span class="tag">Django 5</span><span class="tag">SQLite · PostgreSQL</span>
           <span class="tag">DRF</span><span class="tag">Tailwind CSS</span><span class="tag">CinetPay</span>
           <span class="tag">Brevo</span><span class="tag">QR code</span>
         </div>
@@ -412,7 +414,7 @@ footer .mono{font-size:.75rem;}
           <ul>
             <li>Exports comptables CSV, Excel et PDF</li>
             <li>API REST prête pour une application mobile</li>
-            <li>28 tests automatisés (paiement, rôles, exports, API)</li>
+            <li>238 tests automatisés (paiement, rôles, exports, API, e-mails, fidélité)</li>
             <li>Modélisation MCD/MLD jointe, prête pour le rapport</li>
           </ul>
         </div>
@@ -424,6 +426,81 @@ footer .mono{font-size:.75rem;}
     </article>
 
     <p class="more">+ D'autres projets sont en cours de développement — ce portfolio sera enrichi au fil de l'année.</p>
+  </div>
+</section>
+
+<!-- ===== Nouveautés ===== -->
+<section id="nouveautes" class="alt">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker">Actualité du projet</p>
+      <h2 class="clamp">Nouveautés récentes</h2>
+      <p class="lead" style="margin-top:.8rem;">
+        SILIMU est en production. Voici ce que j'y ai ajouté ces dernières semaines,
+        et les défauts que j'ai dû chercher et corriger.
+      </p>
+    </div>
+
+    <div class="feat-cols" style="margin-top:2rem;">
+      <article class="project reveal">
+        <div class="project-head">
+          <p class="mono tag-date">Fidélité</p>
+          <h3>Un vrai billet de fidélité, pas un code</h3>
+          <p>
+            Après dix voyages, le passager ne reçoit plus une ligne de texte : il reçoit
+            un billet sur le modèle de l'e-billet de traversée — félicitations, code en gros,
+            QR code signé, nom du bénéficiaire et mode d'emploi. Le QR porte la même signature
+            que le billet de traversée, donc un code de récompense inventé est aussi
+            invérifiable qu'un faux billet.
+          </p>
+          <p>
+            Si l'e-mail n'arrive pas, l'agent le renvoie depuis le back-office en un clic,
+            sans créer une seconde récompense.
+          </p>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-head">
+          <p class="mono tag-date">Comptes passagers</p>
+          <h3>Comptes vérifiés par e-mail</h3>
+          <p>
+            Un compte ne se connecte qu'après confirmation de son adresse, par lien à usage
+            unique et à durée limitée. Confirmation, renvoi et mot de passe oublié sont
+            gérés, et l'agent peut renvoyer la confirmation depuis son tableau de bord
+            quand un message ne part pas.
+          </p>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-head">
+          <p class="mono tag-date">Fiabilité</p>
+          <h3>Les envois d'e-mails ne cachent plus leurs échecs</h3>
+          <p>
+            Les courriels en texte simple partaient sans contenu HTML, ce que le service
+            d'envoi refusait silencieusement : aucun message texte n'arrivait jamais, et
+            rien ne le signalait. L'envoi construit maintenant un HTML valide, distingue
+            « service non configuré » d'« envoi échoué », réessaie, puis signale l'échec
+            à l'agent au lieu de faire croire à un succès.
+          </p>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-head">
+          <p class="mono tag-date">Correction</p>
+          <h3>Une page blanche corrigée</h3>
+          <p>
+            Deux inscriptions du même numéro, à vingt secondes d'intervalle, renvoyaient
+            une erreur 500. La validation comparait le numéro tel qu'il était tapé à celui
+            enregistré, qui ne contient ni espaces ni indicatif : le compte n'était pas
+            retrouvé, l'inscription passait, puis la base la rejetait. La recherche porte
+            désormais sur les quatre écritures possibles d'un numéro congolais.
+          </p>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
