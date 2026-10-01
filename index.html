@@ -156,6 +156,24 @@ ul.check li::before{content:"";flex:0 0 auto;width:.5rem;height:.5rem;border-rad
 .feat-cols li{display:flex;gap:.55rem;}
 .feat-cols li::before{content:"✓";color:var(--accent);font-weight:700;}
 .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem;}
+
+/* ===== Nouveautés ===== */
+.news{list-style:none;margin-top:1.6rem;padding:0;display:flex;flex-direction:column;gap:.6rem;}
+.news li{border:1px solid var(--line);border-radius:.9rem;background:#fff;padding:.8rem .95rem;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);}
+.news .tag-date{font-size:.68rem;color:var(--accent);font-weight:700;letter-spacing:.03em;text-transform:uppercase;}
+.news h3{font-size:1rem;font-weight:700;letter-spacing:-.01em;margin-top:.15rem;}
+.news p{color:var(--muted);font-size:.85rem;line-height:1.55;margin-top:.2rem;}
+@media(min-width:768px){
+  .news{gap:.85rem;}
+  .news li{padding:1.05rem 1.35rem;}
+  .news h3{font-size:1.1rem;}
+  .news p{font-size:.9rem;}
+}
+@media(min-width:1100px){
+  .news{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.5rem;}
+  .news li:last-child{grid-column:1 / -1;}
+}
 .more{margin-top:1.75rem;font-size:.9rem;color:#94a3b8;}
 
 /* ===== Contact ===== */
@@ -435,72 +453,38 @@ footer .mono{font-size:.75rem;}
     <div class="reveal">
       <p class="kicker">Actualité du projet</p>
       <h2 class="clamp">Nouveautés récentes</h2>
-      <p class="lead" style="margin-top:.8rem;">
-        SILIMU est en production. Voici ce que j'y ai ajouté ces dernières semaines,
-        et les défauts que j'ai dû chercher et corriger.
+      <p class="lead" style="margin-top:.6rem;">
+        Ce que SILIMU a reçu ces dernières semaines, en bref.
       </p>
     </div>
 
-    <div class="feat-cols" style="margin-top:2rem;">
-      <article class="project reveal">
-        <div class="project-head">
-          <p class="mono tag-date">Fidélité</p>
-          <h3>Un vrai billet de fidélité, pas un code</h3>
-          <p>
-            Après dix voyages, le passager ne reçoit plus une ligne de texte : il reçoit
-            un billet sur le modèle de l'e-billet de traversée — félicitations, code en gros,
-            QR code signé, nom du bénéficiaire et mode d'emploi. Le QR porte la même signature
-            que le billet de traversée, donc un code de récompense inventé est aussi
-            invérifiable qu'un faux billet.
-          </p>
-          <p>
-            Si l'e-mail n'arrive pas, l'agent le renvoie depuis le back-office en un clic,
-            sans créer une seconde récompense.
-          </p>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="project-head">
-          <p class="mono tag-date">Comptes passagers</p>
-          <h3>Comptes vérifiés par e-mail</h3>
-          <p>
-            Un compte ne se connecte qu'après confirmation de son adresse, par lien à usage
-            unique et à durée limitée. Confirmation, renvoi et mot de passe oublié sont
-            gérés, et l'agent peut renvoyer la confirmation depuis son tableau de bord
-            quand un message ne part pas.
-          </p>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="project-head">
-          <p class="mono tag-date">Fiabilité</p>
-          <h3>Les envois d'e-mails ne cachent plus leurs échecs</h3>
-          <p>
-            Les courriels en texte simple partaient sans contenu HTML, ce que le service
-            d'envoi refusait silencieusement : aucun message texte n'arrivait jamais, et
-            rien ne le signalait. L'envoi construit maintenant un HTML valide, distingue
-            « service non configuré » d'« envoi échoué », réessaie, puis signale l'échec
-            à l'agent au lieu de faire croire à un succès.
-          </p>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="project-head">
-          <p class="mono tag-date">Correction</p>
-          <h3>Une page blanche corrigée</h3>
-          <p>
-            Deux inscriptions du même numéro, à vingt secondes d'intervalle, renvoyaient
-            une erreur 500. La validation comparait le numéro tel qu'il était tapé à celui
-            enregistré, qui ne contient ni espaces ni indicatif : le compte n'était pas
-            retrouvé, l'inscription passait, puis la base la rejetait. La recherche porte
-            désormais sur les quatre écritures possibles d'un numéro congolais.
-          </p>
-        </div>
-      </article>
-    </div>
+    <ul class="news">
+      <li class="reveal">
+        <p class="tag-date">Fidélité</p>
+        <h3>Un vrai billet de fidélité</h3>
+        <p>Billets colorés à QR signé au 10ᵉ voyage, renvoyables par l'agent en un clic.</p>
+      </li>
+      <li class="reveal">
+        <p class="tag-date">Comptes</p>
+        <h3>Connexion confirmée par e-mail</h3>
+        <p>Compte bloqué tant que l'adresse n'est pas confirmée. Renvoi et mot de passe oublié inclus.</p>
+      </li>
+      <li class="reveal">
+        <p class="tag-date">Fiabilité</p>
+        <h3>Les e-mails ne ratent plus en silence</h3>
+        <p>Les messages sans HTML ne partaient jamais, sans aucun signe. L'échec est signalé à l'agent.</p>
+      </li>
+      <li class="reveal">
+        <p class="tag-date">Correction</p>
+        <h3>Page blanche à l'inscription</h3>
+        <p>Une erreur 500 sur les inscriptions répétées du même numéro, reproduite puis réparée.</p>
+      </li>
+      <li class="reveal">
+        <p class="tag-date">Qualité</p>
+        <h3>238 tests automatisés</h3>
+        <p>Paiement, rôles, exports, API, e-mails et fidélité couverts sur le back-end Django.</p>
+      </li>
+    </ul>
   </div>
 </section>
 
