@@ -27,21 +27,21 @@ Aucune ressource ne charge depuis Internet : la page s'affiche même **sans conn
 - **À propos** — bio + parcours (formation, projet tutoré)
 - **Compétences** — backend, données & API, frontend & outils
 - **Projets** — SILIMU (réservation de transport lacustre) avec captures d'écran
-- **Nouveautés** — apports récents de SILIMU (billet de fidélité, confirmation
-  d'e-mail des comptes, fiabilisation des envois, correction d'une erreur 500)
+- **Nouveautés** — apports récents de SILIMU (pare-feu d'en-têtes, double facteur
+  du back-office, envoi vérifié des billets, reçu imprimable du guichet)
 - **Contact** — formulaire `mailto:` + coordonnées
 
 ## Chiffres annoncés sur la page
 
-Les compteurs de la section « Statistiques » sont volontairement taken sur des
-valeurs vérifiables et non fragiles : 1 application en production, 238 tests
+Les compteurs de la section « Statistiques » reposent volontairement sur des
+valeurs vérifiables et non fragiles : 1 application en production, 311 tests
 automatisés, 10 lignes lacustres couvertes, 7 ports desservis.
 
-Les nb de traversées programmées changent tous les jours, puisque le serveur
+Le nombre de traversées programmées change tous les jours, puisque le serveur
 replanifie les départs en continu : les afficher donnerait un chiffre faux dès le
 lendemain.
 
-## À jour au 1ᵉʳ octobre 2026
+## À jour au 15 octobre 2026
 
 - Django **5.2**, pas 4.x.
 - Base de données : **SQLite** en exploitation. Le réglage PostgreSQL est écrit et
@@ -49,6 +49,11 @@ lendemain.
   précédemment n'a jamais été créé, l'affirmation a donc été retirée.
 - Tailwind CSS est chargé par CDN sur SILIMU (et non compilé), tandis que ce
   portfolio est entièrement autonome.
+- **Double facteur** sur le back-office via `django-otp` : code à six chiffres,
+  QR, codes de secours à usage unique, obligatoire dès l'activation.
+- **Pare-feu d'en-têtes** : `Content-Security-Policy` et `Permissions-Policy`
+  sur chaque page HTML ; base et secrets en `600`.
+- Tests passés de **238 à 311**.
 
 ## Ouvrir le site
 

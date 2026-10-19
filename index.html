@@ -288,7 +288,7 @@ footer .mono{font-size:.75rem;}
   <div class="wrap">
     <div class="stats">
       <div class="stat"><div class="n">1</div><div class="l">application<br>en production</div></div>
-      <div class="stat"><div class="n">238</div><div class="l">tests<br>automatisés</div></div>
+      <div class="stat"><div class="n">311</div><div class="l">tests<br>automatisés</div></div>
       <div class="stat"><div class="n">10</div><div class="l">lignes lacustres<br>couvertes</div></div>
       <div class="stat"><div class="n">7</div><div class="l">ports<br>desservis</div></div>
     </div>
@@ -432,7 +432,7 @@ footer .mono{font-size:.75rem;}
           <ul>
             <li>Exports comptables CSV, Excel et PDF</li>
             <li>API REST prête pour une application mobile</li>
-            <li>238 tests automatisés (paiement, rôles, exports, API, e-mails, fidélité)</li>
+            <li>311 tests automatisés (paiement, rôles, exports, API, e-mails, sécurité)</li>
             <li>Modélisation MCD/MLD jointe, prête pour le rapport</li>
           </ul>
         </div>
@@ -460,29 +460,34 @@ footer .mono{font-size:.75rem;}
 
     <ul class="news">
       <li class="reveal">
-        <p class="tag-date">Fidélité</p>
-        <h3>Un vrai billet de fidélité</h3>
-        <p>Billets colorés à QR signé au 10ᵉ voyage, renvoyables par l'agent en un clic.</p>
+        <p class="tag-date">Sécurité</p>
+        <h3>Un pare-feu d'en-têtes sur chaque page</h3>
+        <p>Content-Security-Policy qui refuse toute ressource venue d'un tiers, Permissions-Policy
+           qui coupe le micro, la géolocalisation et l'USB. Base et secrets passés en 600.</p>
       </li>
       <li class="reveal">
-        <p class="tag-date">Comptes</p>
-        <h3>Connexion confirmée par e-mail</h3>
-        <p>Compte bloqué tant que l'adresse n'est pas confirmée. Renvoi et mot de passe oublié inclus.</p>
+        <p class="tag-date">Sécurité</p>
+        <h3>Double facteur sur le back-office</h3>
+        <p>Code à six chiffres scanné en QR, obligatoire dès l'activation, codes de secours à usage
+           unique. Le mot de passe seul ne suffit plus au guichet.</p>
       </li>
       <li class="reveal">
-        <p class="tag-date">Fiabilité</p>
-        <h3>Les e-mails ne ratent plus en silence</h3>
-        <p>Les messages sans HTML ne partaient jamais, sans aucun signe. L'échec est signalé à l'agent.</p>
+        <p class="tag-date">Billets</p>
+        <h3>Le billet part vraiment par e-mail</h3>
+        <p>L'envoi était ignoré en silence : le QR, refusé en HTML, n'arrivait jamais. Aujourd'hui
+           il est joint en image, et la page permet de le renvoyer en un clic.</p>
       </li>
       <li class="reveal">
-        <p class="tag-date">Correction</p>
-        <h3>Page blanche à l'inscription</h3>
-        <p>Une erreur 500 sur les inscriptions répétées du même numéro, reproduite puis réparée.</p>
+        <p class="tag-date">Guichet</p>
+        <h3>Un reçu qui tient dans la main</h3>
+        <p>En-tête à la marque SILIMU, agent identifié, QR en grand, mention légale — imprimé sur
+           une seule page, sur papier comme à l'écran.</p>
       </li>
       <li class="reveal">
         <p class="tag-date">Qualité</p>
-        <h3>238 tests automatisés</h3>
-        <p>Paiement, rôles, exports, API, e-mails et fidélité couverts sur le back-end Django.</p>
+        <h3>311 tests automatisés</h3>
+        <p>Paiement, rôles, exports, API, e-mails, sécurité et double facteur couverts sur le
+           back-end Django — les deux suites au vert.</p>
       </li>
     </ul>
   </div>
